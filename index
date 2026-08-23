@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Untuk Kamu ❤️</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+
+        <!-- Halaman 1 -->
+        <div id="page1" class="page active">
+            <div class="content">
+                <h2>Masukkan Password</h2>
+                <div style="position: relative; margin-bottom: 10px; width: 75%; margin-left: auto; margin-right: auto;">
+                    <img src="peeking_character.png" alt="Nyender" style="position: absolute; left: 417px; top: -5px; width: 80px; z-index: 1;">
+                    <input type="password" id="password-input" readonly placeholder="Ketik password..." style="position: relative; z-index: 2; margin-bottom: 0;">
+                </div>
+                <p id="error-msg" style="color: red; display: none; margin-bottom: 10px;">Password salah!</p>
+                <div class="keyboard">
+                    <div class="row">
+                        <button onclick="pressKey('q')">Q</button>
+                        <button onclick="pressKey('w')">W</button>
+                        <button onclick="pressKey('e')">E</button>
+                        <button onclick="pressKey('r')">R</button>
+                        <button onclick="pressKey('t')">T</button>
+                        <button onclick="pressKey('y')">Y</button>
+                        <button onclick="pressKey('u')">U</button>
+                        <button onclick="pressKey('i')">I</button>
+                        <button onclick="pressKey('o')">O</button>
+                        <button onclick="pressKey('p')">P</button>
+                    </div>
+                    <div class="row">
+                        <button onclick="pressKey('a')">A</button>
+                        <button onclick="pressKey('s')">S</button>
+                        <button onclick="pressKey('d')">D</button>
+                        <button onclick="pressKey('f')">F</button>
+                        <button onclick="pressKey('g')">G</button>
+                        <button onclick="pressKey('h')">H</button>
+                        <button onclick="pressKey('j')">J</button>
+                        <button onclick="pressKey('k')">K</button>
+                        <button onclick="pressKey('l')">L</button>
+                    </div>
+                    <div class="row">
+                        <button onclick="pressKey('z')">Z</button>
+                        <button onclick="pressKey('x')">X</button>
+                        <button onclick="pressKey('c')">C</button>
+                        <button onclick="pressKey('v')">V</button>
+                        <button onclick="pressKey('b')">B</button>
+                        <button onclick="pressKey('n')">N</button>
+                        <button onclick="pressKey('m')">M</button>
+                        <button onclick="deleteKey()">⌫</button>
+                    </div>
+                    <div class="row">
+                        <button onclick="checkPassword()" class="enter-btn">ENTER</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Halaman 2 -->
+        <div id="page2" class="page">
+            <div class="content">
+                <h2>MAAFIN AKU YA SAYANG KU YANG CANTIK DAN IMUTT ❤️</h2>
+                <div class="button-container">
+                    <div style="position: relative; width: 65%; max-width: 260px; margin: 0 auto;">
+                        <img src="image2_left.png" alt="Kiri" style="position: absolute; left: -43px; top: -71px; width: 90px; z-index: 1;">
+                        <img src="image2_right.png" alt="Kanan" style="position: absolute; left: 223px; top: -71px; width: 90px; z-index: 1;">
+                        <button class="btn-primary" onclick="goToPage(3)" style="position: relative; z-index: 2; width: 100%;">iyaa aku maafin</button>
+                    </div>
+                    <button class="btn-secondary" onclick="goToPage(4)" style="width: 65%; max-width: 260px; margin: 0 auto;">g</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Halaman 3 -->
+        <div id="page3" class="page">
+            <div class="content">
+                <div style="position: relative; display: inline-block; width: 100%;">
+                    <img src="image3_1.png" alt="Boleh yak" style="position: absolute; left: 234px; top: 25px; width: 90px; z-index: 1;">
+                    <img src="image3_2.png" alt="Kucing bunga" style="position: absolute; left: 385px; top: -48px; width: 90px; z-index: 1;">
+                    <img src="image3_3.png" alt="Love" style="position: absolute; left: 28px; top: 34px; width: 90px; z-index: 1;">
+                    <img src="image3_4.png" alt="OKE" style="position: absolute; left: 433px; top: 18px; width: 90px; z-index: 3;">
+                    <h2 style="position: relative; z-index: 2;">YEEEY MAKASIH SAYAANGG</h2>
+                </div>
+                <p>kamu mau di bawa in apa pas aku kesana</p>
+                <div class="options-container">
+                    <div class="option" onclick="selectOption('dimsum', this)">
+                        <img src="https://images.unsplash.com/photo-1563245372-f21724e3856d?w=150&h=150&fit=crop" alt="Dimsum">
+                        <p>Dimsum</p>
+                    </div>
+                    <div class="option" onclick="selectOption('bunga', this)">
+                        <img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=150&h=150&fit=crop" alt="Bunga">
+                        <p>Bunga</p>
+                    </div>
+                    <div class="option" onclick="selectOption('opsional', this)">
+                        <img src="https://images.unsplash.com/photo-1513201099705-a9746e1e201f?w=150&h=150&fit=crop" alt="Opsional">
+                        <p>Opsional</p>
+                    </div>
+                </div>
+                <div id="custom-input-container" style="display: none; margin-top: 15px;">
+                    <input type="text" id="custom-gift" placeholder="Ketik yang kamu mau..." class="custom-input">
+                </div>
+                <div id="save-container" style="display: none; margin-top: 20px;">
+                    <button class="btn-primary" onclick="saveSelection()">Simpan</button>
+                </div>
+                <p id="save-msg" style="color: green; display: none; margin-top: 10px; font-weight: bold;">Pilihanmu sudah disimpan sayang! ❤️</p>
+            </div>
+        </div>
+
+        <!-- Halaman 4 -->
+        <div id="page4" class="page">
+            <div class="content full-screen-img">
+                <h2>HMMM SEDIHHHHH</h2>
+                <div class="image-upload-box" style="border: none; box-shadow: none; background: transparent;">
+                    <img src="image4_new.png" alt="Sedih" style="width: 100%; height: 100%; object-fit: contain; border-radius: 20px;">
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
